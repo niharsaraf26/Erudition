@@ -1,0 +1,47 @@
+{%extends 'base_student.html'%}
+{%block body%}
+<h1>GRADE-2</h1>
+
+{%for video in videos  %}
+	  <div class="container">
+		  <div class="col-md" style="width: 740px;height: 600px;background: #000;padding: 0">
+						<div class="d-flex card-header msg_head" style="background: #1B1B1B; width: 740px;">
+							<div class="d-flex bd-highlight">
+
+								<div class=" user_info" style = "color:white">
+								<h5 class="text-centre mt-2 mb-2">TOPIC:{{video.topic}} </h5>
+									<h6 class="text-centre  " >GRADE:{{video.grade}}</h6>
+									<h6 class="text-centre  " >UPLOADED BY:{{video.detail.fname}} {{video.detail.lname}}</h6>
+								</div>
+							</div>
+
+						</div>
+
+    <video class="embed-responsive embed-responsive-16by9" controls="controls">
+        <source src = '/images/{{video.video}}' type="video/mp4">
+	</video>
+			  <div class="not_found" style="margin-left:280px; margin-top:30px">
+                <a href="{%url 'scomment' video.id%}">COMMENTS</a>
+              </div>
+
+					</div>
+		  </div>
+{%endfor%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+{%endblock%}

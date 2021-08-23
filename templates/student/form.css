@@ -1,0 +1,229 @@
+.col-md-7 {
+  /* margin-top: 250px; */
+  text-align: center;
+}
+
+#heading{
+  background: transparent;
+  margin-top: 30px;
+  text-align: center;
+}
+.row{
+  margin-top: 20px;
+}
+.brand{
+  font-size: 6rem;
+  font-weight: 200;
+  line-height: 1;
+}
+h3{
+  text-align: center;
+}
+h1{
+    color: black;
+    font-family: 'Montserrat';
+    text-transform: uppercase;
+    text-shadow: -1px -1px 0px #8400ff, 1px 1px 0px #d54062;
+    letter-spacing: 10px;
+}
+
+p{
+color: #fff;
+letter-spacing: 10px;
+font-weight: 50;
+}
+.btn{
+    box-shadow: 25px 25px 25px -15px -15px rgb(54, 30, 38);
+}
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+html,body{
+  display: grid;
+  height: 100%;
+  width: 100%;
+  place-items: center;
+  background: -webkit-linear-gradient(left, #03c4a1, #7579e7);
+}
+::selection{
+  background: #212121;     //styles the part which is highligted/selected by the user.;
+  color: #fff;
+}
+.wrapper{
+  overflow: hidden;
+  max-width: 399px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+}
+.wrapper .title-text{
+  display: flex;
+  width: 200%;
+}
+.wrapper .title{
+  width:50%;
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.8s cubic-bezier(0.8,-0.5,0.5,1.0); /*real one: cubic-bezier(0.68,-0.55,0.265,1.55) */
+}
+.wrapper .slide-controls{
+  position: relative;
+  display: flex;
+  height: 50px;
+  width: 100%;
+  overflow: hidden;
+  margin: 30px 0 10px 0;
+  justify-content: space-between;
+  border: 2px solid #03c4a1;
+  border-radius: 15px;
+}
+.slide-controls .slide{
+  height: 100%;
+  width: 100%;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 48px;
+  cursor: pointer;
+  z-index: 1;
+  transition: all 0.6s ease;
+}
+.slide-controls label.signup{
+  color: #000;
+}
+.slide-controls .slider-tab{
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  left: 0;
+  z-index: 0;
+  border-radius: 5px;
+  background: -webkit-linear-gradient(left, #7579e7, #03c4a1);
+  transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+  border-radius: 15px;
+}
+input[type="radio"]{
+  display: none;
+}
+#signup:checked ~ .slider-tab{
+  left: 50%;
+}
+#signup:checked ~ label.signup{
+  color: #fff;
+  cursor: default;
+  user-select: none;
+}
+#signup:checked ~ label.login{
+  color: #000;
+}
+#login:checked ~ label.signup{
+  color: #000;
+}
+#login:checked ~ label.login{
+  color: #fff;
+  cursor: default;
+  user-select: none;
+}
+.wrapper .form-container{
+  width: 100%;
+  overflow: hidden;
+}
+.form-container .form-inner{
+  display: flex;
+  width: 200%;
+}
+.form-container .form-inner form{
+  width: 50%;
+  transition: all 0.8s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+.form-inner form .field{
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+}
+.form-inner form .field input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding-left: 15px;
+  border-radius: 15px;
+  border: 2px solid #03c4a1;
+  border-bottom-width: 2px;
+  font-size: 17px;
+  transition: all 0.3s ease;
+}
+.form-inner form .field input:focus{
+  border: 2px solid  #7579e7;
+  box-shadow: inset 0 0 15px #03c4a1;
+}
+.form-inner form .field input::placeholder{
+  color: #999;
+  transition: all 0.6s ease;
+}
+
+/* form .field input:focus::placeholder{
+  color: #b3b3b3;
+}*/
+.form-inner form .pass-link{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.form-inner form .signup-link{
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.form-inner form .pass-link a,
+.form-inner form .signup-link a{
+  color: #03c4a1;
+  text-decoration: none;
+}
+.form-inner form .pass-link a:hover,
+.form-inner form .signup-link a:hover{
+  text-decoration: underline;
+  color: #7579e7;
+}
+form .btn{
+  height: 50px;
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+form .btn .btn-layer{
+  height: 100%;
+  width: 300%;
+  position: absolute;
+  left: -100%;
+  background: -webkit-linear-gradient(right, #41aea9, #03c4a1, #7579e7, #590995);
+  border-radius: 15px;
+  transition: all 0.4s ease;;
+}
+form .btn:hover .btn-layer{
+  left: 0;
+}
+form .btn input[type="submit"]{
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  background: none;
+  border: none;
+  color: #fff;
+  padding-left: 0;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}

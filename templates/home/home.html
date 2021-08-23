@@ -1,0 +1,402 @@
+{% extends 'base.html' %}
+{%block title%} home {%endblock%}
+{%block css%} .features{
+  margin-top: 50px;
+  background: rgba(0, 0, 0, 0.6);
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+.features p{
+  font-family: 'Oswald';
+  letter-spacing: 1px;
+  margin-left: 40px;
+  line-height: 25px;
+  font-size: 1rem;
+}
+.col-md-5{
+  margin-left: 40px;
+}
+h5{
+  font-family: 'Shadows Into Light';
+  color: #8d93ab;
+  font-size: 2rem;
+}
+h6{
+  color: #fff;
+}
+#heading{
+  background: transparent;
+  margin-top: 30px;
+  text-align: center;
+}
+.row{
+  margin-top: 20px;
+}
+.brand{
+  font-size: 6rem;
+  font-weight: 200;
+  line-height: 1;
+}
+img{
+  width: 40px;
+  height: 40px;
+}
+h3{
+  text-align: center;
+}
+h1{
+    color: black;
+    font-family: 'Montserrat';
+    text-transform: uppercase;
+    text-shadow: -1px -1px 0px #8400ff, 1px 1px 0px #d54062;
+    letter-spacing: 10px;
+}
+
+p{
+color: #fff;
+letter-spacing: 10px;
+font-weight: 50;
+}
+.btn{
+    box-shadow: 25px 25px 25px -15px -15px rgb(54, 30, 38);
+}
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+html,body{
+  display: grid;
+  height: 100%;
+  width: 100%;
+  place-items: center;
+  background-image: url(https://images.unsplash.com/photo-1497864149936-d3163f0c0f4b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);
+/*  background: -webkit-linear-gradient(left, #03c4a1, #7579e7);*/
+}
+::selection{
+  background: #212121;     //styles the part which is highligted/selected by the user.;
+  color: #fff;
+}
+.wrapper{
+overflow:hidden;
+height:700px;
+  max-width: 399px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+}
+.wrapper .title-text{
+  display: flex;
+  width: 200%;
+}
+.wrapper .title{
+  width:50%;
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.8s cubic-bezier(0.8,-0.5,0.5,1.0); /*real one: cubic-bezier(0.68,-0.55,0.265,1.55) */
+}
+.wrapper .slide-controls{
+  position: relative;
+  display: flex;
+  height: 50px;
+  width: 100%;
+  overflow: hidden;
+  margin: 30px 0 10px 0;
+  justify-content: space-between;
+  border: 2px solid #b83b5e;
+  border-radius: 15px;
+}
+.slide-controls .slide{
+  height: 100%;
+  width: 100%;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 48px;
+  cursor: pointer;
+  z-index: 1;
+  transition: all 0.6s ease;
+}
+.slide-controls label.signup{
+  color: #000;
+}
+.slide-controls .slider-tab{
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  left: 0;
+  z-index: 0;
+  border-radius: 5px;
+  background: -webkit-linear-gradient(left, #7d0633, #b83b5e);
+  transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+  border-radius: 15px;
+}
+input[type="radio"]{
+  display: none;
+}
+#signup:checked ~ .slider-tab{
+  left: 50%;
+}
+#signup:checked ~ label.signup{
+  color: #fff;
+  cursor: default;
+  user-select: none;
+}
+#signup:checked ~ label.login{
+  color: #000;
+}
+#login:checked ~ label.signup{
+  color: #000;
+}
+#login:checked ~ label.login{
+  color: #fff;
+  cursor: default;
+  user-select: none;
+}
+.wrapper .form-container{
+  width: 100%;
+  overflow: hidden;
+}
+.form-container .form-inner{
+  display: flex;
+  width: 200%;
+}
+.form-inner{
+overflow-y:scroll;
+height: 500px;
+}
+.form-container .form-inner form{
+  width: 50%;
+  transition: all 0.8s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+.form-inner form .field{
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+}
+.form-inner form .field input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding-left: 15px;
+  border-radius: 15px;
+  border: 2px solid #b83b5e;
+  border-bottom-width: 2px;
+  font-size: 17px;
+  transition: all 0.3s ease;
+}
+.form-inner form .field input:focus{
+  border: 2px solid  #7d0633;
+  box-shadow: inset 0 0 15px #b83b5e;
+}
+.form-inner form .field input::placeholder{
+  color: #999;
+  transition: all 0.6s ease;
+}
+
+/* form .field input:focus::placeholder{
+  color: #b3b3b3;
+}*/
+.form-inner form .pass-link{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.form-inner form .signup-link{
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.form-inner form .pass-link a,
+.form-inner form .signup-link a{
+  color: #b83b5e;
+  text-decoration: none;
+}
+.form-inner form .pass-link a:hover,
+.form-inner form .signup-link a:hover{
+  text-decoration: underline;
+  color: #7d0633;
+}
+form .btn{
+  height: 50px;
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+form .btn .btn-layer{
+  height: 100%;
+  width: 300%;
+  position: absolute;
+  left: -100%;
+  background: -webkit-linear-gradient(right, #7d0633, #b83b5e, #7d0633, #590995);
+  border-radius: 15px;
+  transition: all 0.4s ease;;
+}
+form .btn:hover .btn-layer{
+  left: 0;
+}
+form .btn input[type="submit"]{
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  background: none;
+  border: none;
+  color: #fff;
+  padding-left: 0;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+{% endblock%}
+{%block body%}
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+
+
+<div id="heading">
+        <h1 class="brand">Erudition</h1>
+        <p class="lead">AN INTRACTIVE LEARNING PLATFORM.</p>
+        <button type="button" class="btn btn-light Download  mx-1"><i class="fab fa-apple"></i> Download</button>
+        <button type="button" class="btn btn-outline-light Download mx-1"> <i class="fab fa-google-play"></i> Download</button>
+
+      </div>
+
+<br>
+<div class="container">
+<div class="row">
+  <div class="col-md-2">
+  </div>
+<div class="col-md">
+  <div class="features">
+    <h5> <img src="https://st.depositphotos.com/1378583/1263/v/950/depositphotos_12633382-stock-illustration-bright-education-logo.jpg" alt="">Interactive Learning</h5>
+    <p>Engaging teaching combines with adaptive, advanced puzzles to make your child love learning!</p>
+  </div>
+<div class="features">
+<h5><img src="https://st.depositphotos.com/1378583/1263/v/950/depositphotos_12633382-stock-illustration-bright-education-logo.jpg" alt="">Dynamic Dashboards</h5>
+<p>A clean, neat dashboard offers at-a-glance both the teacher and the students a view at their progress and to-do lists. </p>
+</div>
+<div class="features">
+<h5><img src="https://st.depositphotos.com/1378583/1263/v/950/depositphotos_12633382-stock-illustration-bright-education-logo.jpg" alt="">Simplicity at our Core</h5>
+<p>An easy to use design that can be used by anyone, across all platforms.</p>
+</div>
+</div>
+
+
+<div class="col-md-5">
+  <div class="wrapper">
+    <div class="title-text">
+      <div class="title login">Login Form</div>
+      <div class="title signup">Signup Form</div>
+    </div>
+    <div class="form-container">
+      <div class="slide-controls">
+        <input type="radio" name="slide" id="login" checked>
+        <input type="radio" name="slide" id="signup">
+        <label for="login" class="slide login">Login</label>
+        <label for="signup" class="slide signup">Signup</label>
+        <div class="slider-tab">
+        </div>
+      </div>
+      <div class="form-inner" >
+        <form action="/login" class="login" method="post">
+          {% csrf_token %}
+          <div class="field">
+                <input type="text" name="loginusername" id="loginusername" class="form-control" placeholder="username" required>
+              </div>
+          <div class="field">
+                <input type="password" name="loginpassword" id="loginpassword" class="form-control" placeholder="Password" required>
+              </div>
+          <div class="pass-link">
+            <a href="{% url 'reset_password'%}">Forgot password?</a></div>
+          <div class="field btn">
+            <div class="btn-layer">
+            </div>
+            <input type="submit" value="Login">
+          </div>
+
+          <div class="signup-link">
+            Not a member? <a href="">Signup now</a></div>
+            <h5>LET'S MAKE LEARNING FUN!</h5>
+        </form>
+        <form action="/signup" class="signup" method  = "POST" id="signup1">
+          {% csrf_token %}
+          <div class="field">
+                <input type="text"  name="username" id="username" class="form-control" placeholder="username" required>
+              </div>
+          <div class="field">
+             <input type="text" name="fname" id="fname" class="form-control" placeholder="first name" required>
+              </div>
+          <div class="field">
+             <input type="text" name="lname" id="lname" class="form-control" placeholder="last name" required>
+              </div>
+          <div class="field">
+                <input type="email" name="email" id="email" class="form-control" placeholder="Email Address" required>
+              </div>
+          <div class="field">
+            <input type="number" min="1" max="5" id="grade" name="grade" placeholder="Grade" required>
+          </div>
+          <div class="field">
+              <div class="field">
+                <input type="password" name="pass1" id="pass1" class="form-control" placeholder="Password" required>
+              </div>
+              <div class="field">
+                <input type="password" name="pass2" id="pass2" class="form-control" placeholder="Confirm password" required>
+              </div>
+          <div class="field btn">
+            <div class="btn-layer">
+            </div>
+
+            <input  type="submit" value="Signup"  >
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+
+      <script>
+        const loginText = document.querySelector(".title-text .login");
+        const loginForm = document.querySelector("form.login");
+        const loginBtn = document.querySelector("label.login");
+        const signupBtn = document.querySelector("label.signup");
+        const signupLink = document.querySelector("form .signup-link a");
+        signupBtn.onclick = (() => {
+          loginForm.style.marginLeft = "-50%";
+          loginText.style.marginLeft = "-50%";
+        });
+        loginBtn.onclick = (() => {
+          loginForm.style.marginLeft = "0%";
+          loginText.style.marginLeft = "0%";
+        });
+        signupLink.onclick = (() => {
+          signupBtn.click();
+          return false;
+        });
+      </script>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<br>
+<h6>Copyright Erudition 2020</h6>
+{%endblock%}

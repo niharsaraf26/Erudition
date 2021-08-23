@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Sign Up</title>
+  <link rel="icon" href="cubes.svg">
+  
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,900" rel="stylesheet">
+  <link rel="stylesheet" href="css/form.css">
+  <!-- CSS only -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+
+<body>
+
+
+      <div id="heading">
+        <h1 class="brand">Erudition</h1>
+        <p class="lead">AN INTRACTIVE LEARNING PLATFORM.</p>
+        <button type="button" class="btn btn-light Download  mx-1"><i class="fab fa-apple"></i> Download</button>
+        <button type="button" class="btn btn-outline-light Download mx-1"> <i class="fab fa-google-play"></i> Download</button>
+
+      </div>
+
+<br>
+<div class="container">
+<div class="row">
+  <div class="col-md-2">
+  </div>
+<div class="col-md">
+  <div class="features">
+    <h4> <img src="ed.png" alt="">Interactive Learning</h4>
+    <p>Engaging teaching combines with adaptive, advanced puzzles to make your child love learning!</p>
+  </div>
+<div class="features">
+<h4><img src="ed.png" alt="">Dynamic Dashboards</h4>
+<p>A clean, neat dashboard offers at-a-glance both the teacher and the students a view at their progress and to-do lists. </p>
+</div>
+<div class="features">
+<h4><img src="ed.png" alt="">Simplicity at our Core</h4>
+<p>An easy to use design that can be used by anyone, across all platforms.</h4></p>
+</div>
+</div>
+<div class="col-md-5">
+  <div class="wrapper">
+    <div class="title-text">
+      <div class="title login">Login Form</div>
+      <div class="title signup">Signup Form</div>
+    </div>
+    <div class="form-container">
+      <div class="slide-controls">
+        <input type="radio" name="slide" id="login" checked>
+        <input type="radio" name="slide" id="signup">
+        <label for="login" class="slide login">Login</label>
+        <label for="signup" class="slide signup">Signup</label>
+        <div class="slider-tab">
+        </div>
+      </div>
+      <div class="form-inner">
+        <form action="#" class="login">
+          <div class="field">
+            <input type="email" placeholder="Email Address" required>
+          </div>
+          <div class="field">
+            <input type="password" placeholder="Password" required>
+          </div>
+          <div class="pass-link">
+            <a href="#">Forgot password?</a></div>
+          <div class="field btn">
+            <div class="btn-layer">
+            </div>
+            <input type="submit" value="Login">
+          </div>
+          <div class="signup-link">
+            Not a member? <a href="">Signup now</a></div>
+            <h4>LET'S MAKE LEARNING FUN!</h4>
+        </form>
+        <form action="#" class="signup">
+          <div class="field">
+            <input type="text" placeholder="Name" required>
+          </div>
+          <div class="field">
+            <input type="number" min="1" max="5" placeholder="Grade" required>
+          </div>
+          <div class="field">
+            <input type="email" placeholder="Email Address" required>
+          </div>
+          <div class="field">
+            <input type="password" placeholder="Password" required>
+          </div>
+          <div class="field">
+            <input type="password" placeholder="Confirm password" required>
+          </div>
+          <div class="field btn">
+            <div class="btn-layer">
+            </div>
+            <input type="submit" value="Signup">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+
+      <script>
+        const loginText = document.querySelector(".title-text .login");
+        const loginForm = document.querySelector("form.login");
+        const loginBtn = document.querySelector("label.login");
+        const signupBtn = document.querySelector("label.signup");
+        const signupLink = document.querySelector("form .signup-link a");
+        signupBtn.onclick = (() => {
+          loginForm.style.marginLeft = "-50%";
+          loginText.style.marginLeft = "-50%";
+        });
+        loginBtn.onclick = (() => {
+          loginForm.style.marginLeft = "0%";
+          loginText.style.marginLeft = "0%";
+        });
+        signupLink.onclick = (() => {
+          signupBtn.click();
+          return false;
+        });
+      </script>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<br>
+<h6>Copyright Erudition 2020</h6>
+</body>
+
+</html>

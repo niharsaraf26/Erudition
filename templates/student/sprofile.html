@@ -1,0 +1,17 @@
+{%extends 'base_student.html'%}
+{%block body%}
+
+<div class="box" style="padding-left:10px;">
+
+        <h2><img src="{{c.image.url}}"> STUDENT:{{c.username}}</h2>
+        <p>Grade:{{c.grade}}</p>
+        <p>Name:{{c.fname}}</p>
+        <form method="post" enctype="multipart/form-data">
+            {%csrf_token%}
+            {{form.as_p}}
+            <div class="not_found">
+                <button style="margin-top:10px;margin-left:10px;" type="submit">SAVE CHANGES</button>
+            </div>
+        </form>
+        <br>
+    </div>{%endblock%}

@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>PHONICS</title>
+  <link rel="stylesheet" href="{%static 'css/abc.css'%}">
+  <link rel="icon" href="cubes.svg">
+  <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+</head>
+<style>
+  body {
+  text-align: center;
+  background-image: url("https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+}
+
+h1 {
+  font-size: 6rem;
+  color: #1a1c20;
+  font-family: "Arvo", cursive;
+  text-shadow: -2px -2px 0px #8400ff, 2px 2px 0px #d54062;
+    background: rgba(20, 0, 0, 0.6);
+}
+
+footer {
+  color: #1a1c20;
+  font-family: sans-serif;
+}
+
+.A {
+background-color: #f56a79;
+}
+.B {
+background-color: #a37eba;
+}
+.C {
+  background-color: #f08a5d;
+
+}
+.D {
+background-color: #f09ae9;
+}
+.E {
+background-color: #a6f6f1;
+}
+.F {
+background-color: #f08a5d;
+}
+.G {
+background-color: #86c4ba;
+}
+.H {
+    background-color: #ffd36b;
+
+}
+.I {
+background-color: #91d18b;
+}
+.J {
+background-color: #86c4ba;
+}
+.K {
+background-color: #91d18b;
+}
+.L {
+background-color: #a6f6f1;
+}
+.M {
+  background-color: #ffd36b;
+}
+.N {
+background-color: #f09ae9;
+}
+.O {
+  background-color: #f56a79;
+
+}
+.P {
+background-color: #f08a5d;
+}
+.Q {
+  background-color: #ffd36b;
+
+}
+.R {
+background-color: #a37eba;
+}
+.S {
+background-color: #d3c09a;
+}
+.T {
+background-color: #86c4ba;
+}
+.U {
+background-color: #f56a79;
+}
+.V {
+background-color: #f08a5d;
+}
+.W {
+background-color: #a37eba;
+}
+.X {
+background-color: #91d18b;
+}
+.Y {
+background-color: #f09ae9;
+}
+.Z {
+background-color: #a6f6f1;
+}
+
+.set {
+  margin: 2% auto;
+}
+
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
+.pressed {
+  box-shadow: -1px -1px 0px #8400ff, 1px 1px 0px #d54062;;
+  opacity: 0.8;
+}
+
+.red {
+  color: red;
+}
+
+.alpha {
+  outline: focus;
+  border: 10px solid #212121;
+  font-size: 5rem;
+  font-family: 'Arvo', cursive;
+  line-height: 2;
+  font-weight: 900;
+  color: BLACK;
+  border-radius: 15px;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  margin: 10px;
+  text-shadow: -1px -1px 0px #8400ff, 1px 1px 0px #d54062;
+}
+
+</style>
+<body>
+
+  <h1 id="title">PHONICS📚</h1>
+  <div class="set">
+    <button class="A alpha">A</button>
+    <button class="B alpha">B</button>
+    <button class="C alpha">C</button>
+    <button class="D alpha">D</button>
+    <button class="E alpha">E</button>
+    <button class="F alpha">F</button>
+    <button class="G alpha">G</button>
+    <button class="H alpha">H</button>
+    <button class="I alpha">I</button>
+    <button class="J alpha">J</button>
+    <button class="K alpha">K</button>
+    <button class="L alpha">L</button>
+    <button class="M alpha">M</button>
+    <button class="N alpha">N</button>
+    <button class="O alpha">O</button>
+    <button class="P alpha">P</button>
+    <button class="Q alpha">Q</button>
+    <button class="R alpha">R</button>
+    <button class="S alpha">S</button>
+    <button class="T alpha">T</button>
+    <button class="U alpha">U</button>
+    <button class="V alpha">V</button>
+    <button class="W alpha">W</button>
+    <button class="X alpha">X</button>
+    <button class="Y alpha">Y</button>
+    <button class="Z alpha">Z</button>
+  </div>
+
+
+  <footer>
+    Made with ❤️ in INDIA.
+      <p>Copyright© Erudition 2020</p>
+  </footer>
+  <script src="abc.js" charset="utf-8">
+    for (var i=0;i<document.querySelectorAll(".alpha").length;i++)
+//for {var i=0;i<numberOfDrumButtons;i++}
+{document.querySelectorAll(".alpha")[i].addEventListener("click",function()
+{
+    var buttonInnerHTML=this.innerHTML;
+    makeSound(buttonInnerHTML);
+    buttonAnimation(buttonInnerHTML);
+});
+}
+
+
+document.addEventListener("keypress",function(event)
+{ makeSound(event.key);
+  buttonAnimation(event.key);
+});
+
+function makeSound(key)
+{
+  switch (key)
+  {
+          case "A": var audio1 = new Audio("MUSIC/a.mp3");
+                        audio1.play();
+                        break;
+          case "B": var audio2 = new Audio("MUSIC/b.mp3");
+                        audio2.play();
+                        break;
+          case "C": var audio3 = new Audio("MUSIC/c.mp3");
+                        audio3.play();
+                        break;
+          case "D": var audio4 = new Audio("MUSIC/d.mp3");
+                        audio4.play();
+                        break;
+          case "E": var audio5 = new Audio("MUSIC/e.mp3");
+                        audio5.play();
+                        break;
+          case "F": var audio6= new Audio("MUSIC/f.mp3");
+                        audio6.play();
+                        break;
+          case "G": var audio7= new Audio("MUSIC/g.mp3");
+                        audio7.play();
+                        break;
+          case "H": var audio8= new Audio("MUSIC/h.mp3");
+                        audio8.play();
+                        break;
+          case "I": var audio9= new Audio("MUSIC/i.mp3");
+                        audio9.play();
+                        break;
+          case "J": var audio10= new Audio("MUSIC/j.mp3");
+                        audio10.play();
+                        break;
+          case "K": var audio11= new Audio("MUSIC/k.mp3");
+                        audio11.play();
+                        break;
+          case "L": var audio12= new Audio("MUSIC/l.mp3");
+                        audio12.play();
+                        break;
+          case "M": var audio13= new Audio("MUSIC/m.mp3");
+                        audio13.play();
+                        break;
+          case "N": var audio14= new Audio("MUSIC/n.mp3");
+                        audio14.play();
+                        break;
+          case "O": var audio15= new Audio("MUSIC/o.mp3");
+                        audio15.play();
+                        break;
+          case "P": var audio16= new Audio("MUSIC/p.mp3");
+                        audio16.play();
+                        break;
+          case "Q": var audio17= new Audio("MUSIC/q.mp3");
+                        audio17.play();
+                        break;
+          case "R": var audio18= new Audio("MUSIC/r.mp3");
+                        audio18.play();
+                        break;
+          case "S": var audio19= new Audio("MUSIC/s.mp3");
+                        audio19.play();
+                        break;
+          case "T": var audio20= new Audio("MUSIC/t.mp3");
+                        audio20.play();
+                        break;
+          case "U": var audio21= new Audio("MUSIC/u.mp3");
+                        audio21.play();
+                        break;
+          case "V": var audio22= new Audio("MUSIC/v.mp3");
+                        audio22.play();
+                        break;
+          case "W": var audio23= new Audio("MUSIC/w.mp3");
+                        audio23.play();
+                       break;
+          case "X": var audio24= new Audio("MUSIC/x.mp3");
+                        audio24.play();
+                        break;
+          case "Y": var audio25= new Audio("MUSIC/y.mp3");
+                        audio25.play();
+                        break;
+          case "Z": var audio26= new Audio("MUSIC/z.mp3");
+                        audio26.play();
+                        break;
+          default: console.log(buttonInnerHTML);
+
+        }
+}
+function buttonAnimation(currentKey){
+  var activeButton=document.querySelector("."+currentKey);
+  activeButton.classList.add("pressed");
+  setTimeout(function(){
+    activeButton.classList.remove("pressed");
+  },100);
+}
+
+
+  </script>
+
+</body>
+
+</html>

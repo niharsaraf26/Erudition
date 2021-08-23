@@ -1,0 +1,75 @@
+{%extends 'base_teacher.html'%}
+{%load extras%}
+{%block body%}
+
+
+<h2 style="color:black; text-align:center; margin-top:10px;">Comments</h2>
+    <div class="bigcontainer">
+<div class="justify-content-start mb-3" id="postedComment">
+    <!-- profile pic -->
+
+    {% for comment1 in comments %}
+    <div class="d-flex img_cont" style="margin-left:10px;">
+        <img src="/images/user.png" class="rounded-circle user_img">
+        <div class=" justify-content-start mb-5" style="margin-top:0px; padding-top:0px;">
+            <div class="msg_cotainer">
+                {{comment1.comment}}
+                <span class="msg_time">{{comment1.user.username}}  {{comment1.timestamp}}</span>
+
+            </div>
+            <div class="not_found">
+            <button class="btn btn-sm" type="button" data-toggle="collapse"
+                    data-target="#{{forloop.counter}}" aria-expanded="false" aria-controls="{{forloop.counter}}">
+                Reply
+            </button>
+            </div>
+            <div class="collapse" id="{{forloop.counter}}">
+                <div class="card card-body">
+                    <form method="post">
+                        {%csrf_token%}
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">post a reply</label>
+                            <input type="text" class="form-control" name="comment" placeholder="comment"
+                                   id="exampleInputEmail2" aria-describedby="emailHelp">
+                            <input type="hidden" name="parentsno" value="{{comment1.sno}}">
+                        </div>
+
+
+                        <button type="submit" value="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="replies bg-danger my-2">
+                {% for reply in replyDict|get_val:comment1.sno %}
+                {{reply.comment}}
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+    {%endfor%}
+</div>
+        </div>
+    <form method="post">
+        {%csrf_token%}
+        <form>
+            <div class="card-footer" style="margin-top:0px; margin-bottom: 5px;padding:0px;">
+                <form id="post-comment" data-postId="<%= post._id %>">
+                    <div class="input-group">
+                        <textarea id="comment" name="comment" class="form-control type_msg"
+                                  placeholder="Type your message..."></textarea>
+                        <input type="hidden" name="parentsno" value="">
+                        <div class="input-group-append">
+                            <button type="submit" id="enter" value="submit"
+                                    class="input-group-text send_btn d-inline-block">Post
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+
+
+{%endblock%}
